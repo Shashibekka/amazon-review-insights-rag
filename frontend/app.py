@@ -22,9 +22,9 @@ if st.button("Analyze Reviews"):
             try:
                 # Send the POST request to your FastAPI server
                 response = requests.post(
-                    "http://backend:8000/analyze",  # <--- Changed localhost to backend
+                    "https://amazon-rag-api.onrender.com/analyze",  # <--- Your live Render URL!
                     json={"query": query}
-        )
+                )
                 
                 # Check if the request was successful
                 if response.status_code == 200:
