@@ -2,10 +2,9 @@
 venv/
 .env
 
-# Data and Databases (Too heavy for Git)
-data/
-chroma_db/
+# Ignore raw data files (Too heavy for GitHub!)
 *.csv
+data/*.csv
 
 # Python Cache
 __pycache__/
