@@ -7,4 +7,3 @@ langchain-community
 langchain-huggingface
 chromadb
 python-dotenv
-sentence-transformers

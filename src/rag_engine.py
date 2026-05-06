@@ -1,6 +1,7 @@
 # src/rag_engine.py
 import os
 from dotenv import load_dotenv
+from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_groq import ChatGroq
@@ -14,9 +15,12 @@ load_dotenv()
 class ReviewAnalyzerRAG:
     def __init__(self, persist_dir="./data/chroma_db"):
         print("Initializing RAG Engine...")
-        # 1. Load Embeddings
-        self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        
+        # 1. Load Embeddings via API (Zero Memory Footprint!)
+        self.embeddings = HuggingFaceInferenceAPIEmbeddings(
+            api_key=os.environ.get("HF_TOKEN"),
+            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        )
+
         # 2. Connect to existing Vector DB
         self.vector_db = Chroma(
             persist_directory=persist_dir, 
