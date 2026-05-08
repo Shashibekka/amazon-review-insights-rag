@@ -2,7 +2,7 @@
 import os
 from dotenv import load_dotenv
 from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEndpointEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_groq import ChatGroq
 from langchain_classic.chains import create_retrieval_chain
@@ -15,10 +15,10 @@ load_dotenv()
 class ReviewAnalyzerRAG:
     def __init__(self, persist_dir="./data/chroma_db"):
         print("Initializing RAG Engine...")
-        # 1. Load Embeddings via API (Zero Memory Footprint!)
-        self.embeddings = HuggingFaceInferenceAPIEmbeddings(
-            api_key=os.environ.get("HF_TOKEN"),
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        # 1. Load Embeddings via the NEW Official API
+        self.embeddings = HuggingFaceEndpointEmbeddings(
+            model="sentence-transformers/all-MiniLM-L6-v2",
+            huggingfacehub_api_token=os.environ.get("HF_TOKEN")
         )
 
         # 2. Connect to existing Vector DB
