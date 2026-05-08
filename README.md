@@ -26,8 +26,7 @@ This project is built using a decoupled microservice architecture:
 * **Inference Engine:** Groq (Llama 3)
 * **Containerization:** Docker & Docker Compose
 
-> **[Insert Image Here: Architecture Diagram or Screenshot of the working UI]**
-> ![Amazon Review Dashboard UI](assets/dashboard.png)
+> ![Amazon Review Dashboard UI](Dashboard.png)
 ---
 
 ## ⚙️ The Engineering Journey: Challenges & Solutions
@@ -62,8 +61,8 @@ Building a local prototype is easy; deploying it to the cloud is where real engi
 
 ## 🚀 Live Demo
 
-* **Frontend Dashboard:** [(https://amazon-review-insights-rag-fouggcoacsb3n32zimgtez.streamlit.app/)]
-* **Backend API Docs:** [https://dashboard.render.com/web/srv-d7th02pkh4rs73anm2mg/events]/docs
+* **Frontend Dashboard:** (https://amazon-review-insights-rag-fouggcoacsb3n32zimgtez.streamlit.app/)
+* **Backend API Docs:** https://dashboard.render.com/web/srv-d7th02pkh4rs73anm2mg/events/docs
 
 ---
 
