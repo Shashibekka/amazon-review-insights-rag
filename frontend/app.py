@@ -34,8 +34,14 @@ if st.button("Analyze Reviews"):
                     st.write(data["answer"])
                 else:
                     st.error(f"Backend API Error: {response.status_code}")
+                    st.error(f"Details: {response.text}")
+                    st.error("Please check the server logs for more information.")
+                    st.code(response.text)
+                    st.stop()
                     
             except requests.exceptions.ConnectionError:
                 st.error("Failed to connect to the backend. Is your FastAPI server running on port 8000?")
     else:
         st.warning("Please enter a question first.")
+
+
