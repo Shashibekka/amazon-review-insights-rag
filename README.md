@@ -72,5 +72,5 @@ Want to run this locally? Ensure you have Docker and Docker Compose installed.
 
 **1. Clone the repository**
 ```bash
-git clone [https://github.com/YOUR_USERNAME/amazon-review-insights-rag.git](https://github.com/YOUR_USERNAME/amazon-review-insights-rag.git)
+git clone [https://github.com/shashibekka/amazon-review-insights-rag.git](https://github.com/shashibekka/amazon-review-insights-rag.git)
 cd amazon-review-insights-rag
